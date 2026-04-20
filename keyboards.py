@@ -9,10 +9,12 @@ main_kb = ReplyKeyboardMarkup(
     one_time_keyboard=False
 )
 
-menu_kb = InlineKeyboardMarkup(
-    inline_keyboard=[
-        [InlineKeyboardButton(text="✉️ Создать капсулу времени", callback_data="create_capsule")],
-        [InlineKeyboardButton(text="📬 Мои полученные капсулы", callback_data="view_capsules")],
-        [InlineKeyboardButton(text="🚪 Выйти", callback_data="logout")]
-    ]
+menu_kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="✉️ Создать капсулу")],
+        [KeyboardButton(text="📬 Мои капсулы"), KeyboardButton(text="📜 История капсул")],
+        [KeyboardButton(text="🚪 Выйти")]
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=False
 )
